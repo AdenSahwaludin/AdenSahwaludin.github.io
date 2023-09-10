@@ -36,17 +36,22 @@
       class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
     >
       <main>
-        <h4>Kepada Bapak/Ibu/Saudara/i</h4>
+        <h4>Kepada <span id="teksKetik1"></span></h4>
         <h1>Aden & Mega</h1>
-        <p>Akan melangsungkan resepsi pernikahan dalam:</p>
+        <p id="teksKetik2"></p>
         <div class="simply-countdown"></div>
-        <a href="#undangan" class="btn btn-lg text-center">Lihat Undangan</a>
+        <a
+          href="#home"
+          class="btn btn-lg text-center lihatUndangan"
+          onclick="enableScroll()"
+          >Lihat Undangan</a
+        >
       </main>
     </section>
 
     <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
       <div class="container">
-        <a class="navbar-brand" href="#">A&M Weeding</a>
+        <a class="navbar-brand" href="#">A&M Wedding</a>
         <button
           class="navbar-toggler border-0"
           type="button"
@@ -79,7 +84,7 @@
               <a class="nav-link" href="#home">Home</a>
               <a class="nav-link" href="#info">Info</a>
               <a class="nav-link" href="#story">Story</a>
-              <a class="nav-link" href="#galeri">Galeri</a>
+              <a class="nav-link" href="#gallery">Gallery</a>
               <a class="nav-link" href="#rsvp">RSVP</a>
               <a class="nav-link" href="#gifts">Gifts</a>
             </div>
@@ -92,9 +97,15 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 text-center">
-            <h2>Acara pernikahan</h2>
+            <h2
+              class="typewrite"
+              data-period="2000"
+              data-type='[ "Acara pernikahan","Aden & Mega" ]'
+            ></h2>
             <h3>
-              Diselenggaralan pada 14 Desember 2026 Di Indramayu, Jawa Barat
+              Diselenggaralan Pada Hari
+              <u class="fw-bold">Selasa, 14 Desember 2026</u> Di Indramayu, Jawa
+              Barat
             </h3>
             <p>
               Oleh karena itu, dengan segala hormat, kami bermaksud untuk
@@ -165,6 +176,15 @@
               Alamat: Gedung Kologam, Kodiklat TNI AD. <br />
               Jl. Aceh, Merdeka, Kec. Sumur Bandung, Kota Bandung
             </p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15843.359732941108!2d107.616864!3d-6.9097349!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e635c9284fc1%3A0x268bddf9bd0971c0!2sKologdam!5e0!3m2!1sen!2sid!4v1694364187228!5m2!1sen!2sid"
+              width="100%"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             <a
               href="https://goo.gl/maps/R9seweCadg9MNyox5"
               target="_blank"
@@ -191,7 +211,7 @@
                   </div>
                   <div class="col-md-6">
                     <i class="bi bi-calendar3 d-block"></i>
-                    <span>Minggu, 14 Desember 2026</span>
+                    <span>Selasa, 14 Desember 2027</span>
                   </div>
                 </div>
               </div>
@@ -212,7 +232,7 @@
                   </div>
                   <div class="col-md-6">
                     <i class="bi bi-calendar3 d-block"></i>
-                    <span>Minggu, 14 Desember 2026</span>
+                    <span>Selasa, 14 Desember 2027</span>
                   </div>
                 </div>
               </div>
@@ -337,7 +357,7 @@
           </div>
         </div>
         <div
-          class="row row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center"
+          class="row row-cols-md-3 row-cols-sm-2 row-cols-2 justify-content-center"
         >
           <div class="col mt-3">
             <a
@@ -413,9 +433,267 @@
       </div>
     </section>
 
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Isi form dibawah ini untuk melakukan informasi kehadiran</p>
+          </div>
+        </div>
+        <form
+          class="row row-cols-lg-auto g-3 align-items-center justify-content-center"
+          method="post"
+          action="https://script.google.com/macros/s/AKfycbz9aylgd6_fwj22HynTIPW8JJ2ZcBliRX6AUHWmQQjaKiWzMe6up7QMW6dhapGscyhJ4w/exec"
+          id="my-form"
+        >
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="nama" class="form-control" id="nama" name="nama" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="jumlah" class="form-label">Jumlah</label>
+              <input
+                type="number"
+                class="form-control"
+                id="jumlah"
+                name="jumlah"
+                min="1"
+                max="10"
+                length="1"
+                value="1"
+              />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="status" class="form-label">status</label>
+              <select name="status" id="status" class="form-select">
+                <option selected>Pilih salah satu</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 35px">
+            <button class="btn btn-primary">Kirim</button>
+          </div>
+        </form>
+
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-6">
+            <div id="disqus_thread"></div>
+            <script>
+              /**
+               *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+               *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+              /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+              (function () {
+                // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                  s = d.createElement("script");
+                s.src = "https://am-wedding.disqus.com/embed.js";
+                s.setAttribute("data-timestamp", +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript
+              >Please enable JavaScript to view the
+              <a href="https://disqus.com/?ref_noscript"
+                >comments powered by Disqus.</a
+              ></noscript
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gifts" class="gifts">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Ungkapan Tanda Kasih</span>
+            <h2>Kirim Hadidah</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              suscipit vitae repudiandae error iusto assumenda praesentium
+              impedit ipsa minima!
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center text-center">
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="fw-bold">BCA</div>
+                BCA 123456789 - ADEN SAHWALUDIN
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">BCA</div>
+                MANDIRI 12345678 - ADEN SAHWALUDIN
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">Saweria</div>
+                <img
+                  src="img/qr code.jpeg"
+                  alt="Saweria QR"
+                  class="img-thumbnail"
+                  width="150"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <small class="block"
+              >&copy; 2034 AM Wedding. All Right Reserved.</small
+            >
+            <small class="block"
+              >Design by
+              <a href="https://instagram.com/aden_randz">@AdenSahwaludin</a>
+            </small>
+            <ul class="mt-3">
+              <li>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-whatsapp"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-tiktok"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="audio-container">
+      <audio id="song" autoplay loop>
+        <source src="audio/Akad - Payung Teduh.mp3" type="audio/mp3" />
+      </audio>
+      <div class="audio-icon-wrapper" style="display: none">
+        <i class="bi bi-disc"></i>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        const form = document.getElementById("my-form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: "POST",
+            body: data,
+          }).then(() => {
+            alert("Konfirmasi Kehadiran Berhasil dikirim!");
+          });
+        });
+      });
+    </script>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const nama = urlParams.get("n") || "";
+      const pronoun = urlParams.get("p") || "Bapak/Ibu/Saudara/i";
+      document.querySelector("#nama").value = nama;
+
+      function typeText(elementId, text, letter = 0) {
+        const targetElement = document.getElementById(elementId);
+
+        if (letter < text.length) {
+          targetElement.innerHTML += text.charAt(letter);
+          let speed = Math.floor(Math.random() * 150) + 50;
+          setTimeout(() => typeText(elementId, text, letter + 1), speed);
+        }
+      }
+
+      typeText("teksKetik1", `${pronoun} ${nama},`.replace(/ ,$/, ","));
+      typeText("teksKetik2", " Akan Melangsungkan Resepsi Pernikahan Dalam: ");
+    </script>
+
+    <script>
+      var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = "";
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) {
+          delta /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function () {
+          that.tick();
+        }, delta);
+      };
+
+      window.onload = function () {
+        var elements = document.getElementsByClassName("typewrite");
+        for (var i = 0; i < elements.length; i++) {
+          var toRotate = elements[i].getAttribute("data-type");
+          var period = elements[i].getAttribute("data-period");
+          if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+      };
+    </script>
     <script>
       simplyCountdown(".simply-countdown", {
-        year: 2026, // required
+        year: 2027, // required
         month: 12, // required
         day: 14, // required
         hours: 8, // Default is 0 [0-23] integer
@@ -441,6 +719,57 @@
       offcanvas.addEventListener("hidden.bs.offcanvas", function () {
         stickyTop.style.overflow = "hidden";
       });
+    </script>
+    <script>
+      const rootElement = document.querySelector(":root");
+      const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
+      const audioIcon = document.querySelector(".audio-icon-wrapper i");
+      const song = document.querySelector("#song");
+      let isPlaying = false;
+      function disableScroll() {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft =
+          window.pagexOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        };
+        rootElement.style.scrollBehavior = "auto";
+      }
+
+      function enableScroll() {
+        window.onscroll = function () {};
+        rootElement.style.scrollBehavior = "smooth";
+        //localStorage.setItem("udahPernahKebuka", "true");
+        playAudio();
+      }
+
+      function playAudio() {
+        song.volume = 0.7;
+        audioIconWrapper.style.display = "flex";
+        song.play();
+        isPlaying = true;
+      }
+
+      audioIconWrapper.onclick = function () {
+        if (isPlaying) {
+          song.pause();
+          audioIcon.classList.remove("bi-disc");
+          audioIcon.classList.add("bi-pause-circle");
+        } else {
+          song.play();
+          audioIcon.classList.add("bi-disc");
+          audioIcon.classList.remove("bi-pause-circle");
+        }
+
+        isPlaying = !isPlaying;
+      };
+
+      //      if (!localStorage.getItem("udahPernahKebuka")) {
+      //       disableScroll();
+      //   }
+      disableScroll();
     </script>
   </body>
 </html>
