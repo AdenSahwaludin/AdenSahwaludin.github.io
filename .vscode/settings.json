@@ -1,3 +1,6 @@
 {
-  "terminal.integrated.localEchoStyle": "dim"
+	"terminal.integrated.localEchoStyle": "dim",
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
