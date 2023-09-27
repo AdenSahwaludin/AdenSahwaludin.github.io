@@ -408,7 +408,7 @@ body {
 }
 
 .gallery img:hover {
-	transform: scale(1.17);
+	transform: scale(1.1);
 }
 
 .rsvp {
